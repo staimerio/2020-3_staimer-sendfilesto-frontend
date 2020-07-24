@@ -102,8 +102,7 @@ export function downloadFile(file, setProgress, setChecking) {
 			type: FIND_FILE
 		});
 		try {
-			const response = await fetch(`${urlDownloadFiles}/${file.cloud}`);
-			// const response = await fetch(`http://localhost:3000/example.exe`);
+			const response = await fetch(`${urlDownloadFiles}/${file.code}`);			
 			//set the checking to false
 			setChecking(false);
 			//read the file

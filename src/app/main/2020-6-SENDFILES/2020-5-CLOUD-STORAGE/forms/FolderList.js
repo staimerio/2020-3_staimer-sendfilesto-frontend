@@ -74,7 +74,7 @@ const FolderList = props => {
 	const getDownloadAction = item => {
 		return [
 			{
-				key: `delete-${item.cloud}`,
+				key: `delete-${item.code}`,
 				'data-value': `Download: ${item.filename}`,
 				icon: 'cloud_download_24px',
 				to: '/',
@@ -95,7 +95,7 @@ const FolderList = props => {
 		const filesList = files.map(file => {
 			const createdAt = file.created_at ? `${file.created_at} |` : '';
 			const item = {
-				key: `success-${file.cloud}`,
+				key: `success-${file.code}`,
 				title: file.filename,
 				subtitle: `${createdAt} ${getSizeFromBytes(file.size)} | ${file.mimetype}`,
 				avatar: getAvatarFromStr(file.extension),
@@ -108,7 +108,7 @@ const FolderList = props => {
 	const getErrorFiles = files => {
 		const filesList = files.map(file => {
 			const item = {
-				key: `error-${file.cloud}`,
+				key: `error-${file.code}`,
 				title: file.filename,
 				subtitle: file.msg,
 				avatar: getAvatarFromStr('error')

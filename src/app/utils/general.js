@@ -72,6 +72,9 @@ export const getAvatarFromStr = objName => {
 	let icon;
 	let variant = 'primary';
 	switch (objName) {
+		case 'epub':
+			icon = 'book_24px';
+			break;
 		case 'pdf':
 			icon = 'picture_as_pdf_24px';
 			break;

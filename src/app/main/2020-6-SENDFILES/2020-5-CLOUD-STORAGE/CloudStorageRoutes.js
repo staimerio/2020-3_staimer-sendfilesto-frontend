@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import i18next from 'i18next';
 
 import en from './i18n/en';
@@ -12,10 +12,10 @@ i18next.addResourceBundle('es', 'homePage', es);
 
 function CloudStorageRoutes(props) {
 	return (
-		<Switch>
+		<Router>
 			<Route path="/downloads/:code" exact component={React.lazy(() => import('./components/DownloadsPage'))} />
 			<Route path="/" exact component={React.lazy(() => import('./components/HomePage'))} />
-		</Switch>
+		</Router>
 	);
 }
 

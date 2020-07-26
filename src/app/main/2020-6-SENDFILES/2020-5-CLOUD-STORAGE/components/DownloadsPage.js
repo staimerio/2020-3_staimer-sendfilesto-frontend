@@ -46,9 +46,6 @@ function DownloadsPage(props) {
 
 	useEffect(() => {
 		if (!folderList.code) dispatch(Actions.getFolder(code));
-		// return () => {
-		//   dispatch(Actions.clearSimcard());
-		//  };
 	}, [dispatch, folderList.code, code]);
 
 	// const propsContent = {
@@ -56,23 +53,25 @@ function DownloadsPage(props) {
 	// };
 
 	return (
-		<FusePageSimple
-			classes={{
-				root: classes.root,
-				wrapper: classes.wrapper
-			}}
-			header={
-				<div className="p-24">
-					<Typography variant="body2">{folderList.description || t('NO_DESCRIPTION')}</Typography>
-				</div>
-			}
-			content={
-				<div className="p-24 sm:m-auto" style={propsStyleContainer}>
-					{/* <CardOverview {...propsContent} /> */}
-					<FolderList code={code} errorList={folderList.error} successList={folderList.success} />
-				</div>
-			}
-		/>
+		folderList.code && (
+			<FusePageSimple
+				classes={{
+					root: classes.root,
+					wrapper: classes.wrapper
+				}}
+				header={
+					<div className="p-24">
+						<Typography variant="body2">{folderList.description || t('NO_DESCRIPTION')}</Typography>
+					</div>
+				}
+				content={
+					<div className="p-24 sm:m-auto" style={propsStyleContainer}>
+						{/* <CardOverview {...propsContent} /> */}
+						<FolderList code={code} errorList={folderList.error} successList={folderList.success} />
+					</div>
+				}
+			/>
+		)
 	);
 }
 

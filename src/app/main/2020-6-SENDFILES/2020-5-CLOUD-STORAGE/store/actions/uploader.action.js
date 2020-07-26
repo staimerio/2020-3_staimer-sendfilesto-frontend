@@ -1,6 +1,6 @@
 import * as http from '@request/http';
 
-import { StorageServices } from '../apps';
+import { StorageServices, CacheServices } from '../apps';
 import { showSnackbarMessage } from 'app/utils';
 
 import { uploaderFormInterface } from '../../models';
@@ -11,6 +11,8 @@ import { uploaderFormInterface } from '../../models';
 const urlStorageFiles = StorageServices.BaseURL + StorageServices.Files;
 const urlStorageFolder = StorageServices.BaseURL + StorageServices.Folder;
 const urlDownloadFiles = StorageServices.BaseURL + StorageServices.DownloadFiles;
+
+const urlCacheDownloadFiles = CacheServices.BaseURL + CacheServices.DownloadFiles;
 
 export const SAVE_UPLOADER = '[UPLOADER] SAVE_UPLOADER';
 export const SAVED_UPLOADER = '[UPLOADER] SAVED_UPLOADER';
@@ -102,7 +104,16 @@ export function downloadFile(file, setProgress, setChecking) {
 			type: FIND_FILE
 		});
 		try {
-			const response = await fetch(`${urlDownloadFiles}/${file.code}`);			
+			const urlStorage = `${urlDownloadFiles}/${file.code}`;
+			const urlCache = `${urlCacheDownloadFiles}/${file.code}`;
+			const response = await fetch(urlCache, {
+				headers: {
+					source: urlStorage
+				}
+			});
+			//check it has any problem
+			if (response.status !== 200) throw new Error('Bad request.');
+
 			//set the checking to false
 			setChecking(false);
 			//read the file

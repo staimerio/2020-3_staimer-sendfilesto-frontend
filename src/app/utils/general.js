@@ -14,6 +14,9 @@ export const getLetterFromString = (text, defaultValue = 'F') => (text.length ? 
  * @param {int} autoHideDuration: time in milliseconds that the message is showing
  */
 export function showSnackbarMessage(message, variant, dispatch, autoHideDuration) {
+	//set duration if it doesn't exists.
+	autoHideDuration = autoHideDuration || 2000;
+	//show error message
 	dispatch(
 		showMessage({
 			message,

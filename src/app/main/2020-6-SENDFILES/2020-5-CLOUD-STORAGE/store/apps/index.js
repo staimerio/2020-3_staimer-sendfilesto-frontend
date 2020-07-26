@@ -1,5 +1,4 @@
 import { StorageServices } from './storageServices';
+import { CacheServices } from './cacheServices';
 
-export {
-    StorageServices,
-};
+export { StorageServices, CacheServices };

@@ -2,13 +2,7 @@ import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
-import {
-	Paper,
-	Divider,
-	Link,
-	Typography,
-	LinearProgress
-} from '@material-ui/core';
+import { Paper, Divider, Link, Typography, LinearProgress } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import List from '@material-ui/core/List';
@@ -18,6 +12,7 @@ import CardErrorFile from '@components/cardList/CardErrorFile';
 import * as Actions from '../store/actions/';
 import { getSizeFromBytes, getAvatarFromStr } from 'app/utils';
 import CardSuccessFile from '@components/cardList/CardSuccessFile';
+import Timer from '@components/time/Timer';
 
 const useStyles = makeStyles(theme => {
 	// console.log(theme.palette)
@@ -60,16 +55,16 @@ const useStyles = makeStyles(theme => {
 	};
 });
 
-
 const FolderList = props => {
 	const { errorList, successList } = props;
 
 	const { t } = useTranslation('homePage');
 	const classes = useStyles();
 	const dispatch = useDispatch();
-	
+
 	const [progress, setProgress] = React.useState(0);
 	const [checking, setChecking] = React.useState(false);
+	const [timer, setTimer] = React.useState(false);
 
 	const getDownloadAction = item => {
 		return [
@@ -87,8 +82,8 @@ const FolderList = props => {
 	};
 
 	const downloadFile = file => {
-		setChecking(true);
-		dispatch(Actions.downloadFile(file, setProgress, setChecking));
+		setTimer(true);
+		dispatch(Actions.downloadFile(file, setProgress, setChecking, setTimer));
 	};
 
 	const getSuccessFiles = files => {
@@ -122,6 +117,11 @@ const FolderList = props => {
 		successList: getSuccessFiles(successList),
 		errorList: getErrorFiles(errorList)
 	};
+	const propsTimer = {
+		secs: 5,
+		status: true,
+		handleFinish: setChecking
+	};
 
 	const clearProgress = progress => {
 		if (progress === 100) setProgress(0);
@@ -130,6 +130,7 @@ const FolderList = props => {
 
 	return (
 		<Paper elevation={1} className={classes.contentCard}>
+			{timer ? <Timer {...propsTimer}></Timer> : null}
 			{checking ? (
 				<Fragment>
 					<Typography className="p-4">{t('CHECKING_LINK')}</Typography>

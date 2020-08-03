@@ -97,7 +97,7 @@ export function getFolder(folder) {
  * Download a file from a url
  * @param {string} file: metadata about the file
  */
-export function downloadFile(file, setProgress, setChecking) {
+export function downloadFile(file, setProgress, setChecking, setTimer) {
 	/*Convert from object to form */
 	return async dispatch => {
 		dispatch({
@@ -115,6 +115,7 @@ export function downloadFile(file, setProgress, setChecking) {
 			if (response.status !== 200) throw new Error('Bad request.');
 
 			//set the checking to false
+			setTimer(false);
 			setChecking(false);
 			//read the file
 			const reader = response.body.getReader();

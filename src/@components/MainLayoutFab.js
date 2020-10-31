@@ -15,7 +15,19 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles(theme => ({
 	fab: {
-		position: 'fixed',
+		
+	},
+	loading: {
+		pointerEvents: 'none'
+	},
+	progress: {
+		color: theme.palette.primary
+	},
+	progressExtended: {
+		marginRight: theme.spacing(1)
+	},
+	btnContainer: {
+		position: 'absolute',
 		right: 16,
 		bottom: 16,
 		[theme.breakpoints.up('sm')]: {
@@ -27,15 +39,6 @@ const useStyles = makeStyles(theme => ({
 			bottom: 32
 		},
 		zIndex: 9999
-	},
-	loading: {
-		pointerEvents: 'none'
-	},
-	progress: {
-		color: theme.palette.primary
-	},
-	progressExtended: {
-		marginRight: theme.spacing(1)
 	}
 }));
 
@@ -43,25 +46,27 @@ const MainLayoutFab = ({ loading, loadingText, onClick, children, ...props }) =>
 	const classes = useStyles();
 
 	return (
-		<Fab
-			className={clsx(classes.fab, {
-				[classes.loading]: loading
-			})}
-			color="secondary"
-			onClick={loading ? undefined : onClick}
-			{...props}
-		>
-			{!loading ? (
-				children
-			) : props.variant === 'extended' ? (
-				<React.Fragment>
-					<CircularProgress size={24} className={clsx(classes.progress, classes.progressExtended)} />
-					{loadingText}
-				</React.Fragment>
-			) : (
-				<CircularProgress size={24} className={classes.progress} />
-			)}
-		</Fab>
+		<div className={classes.btnContainer}>
+			<Fab
+				className={clsx(classes.fab, {
+					[classes.loading]: loading
+				})}
+				color="secondary"
+				onClick={loading ? undefined : onClick}
+				{...props}
+			>
+				{!loading ? (
+					children
+				) : props.variant === 'extended' ? (
+					<React.Fragment>
+						<CircularProgress size={24} className={clsx(classes.progress, classes.progressExtended)} />
+						{loadingText}
+					</React.Fragment>
+				) : (
+					<CircularProgress size={24} className={classes.progress} />
+				)}
+			</Fab>
+		</div>
 	);
 };
 

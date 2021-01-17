@@ -11,6 +11,7 @@ import reducer from '../store/reducers';
 import FolderList from '../forms/FolderList';
 import * as Actions from '../store/actions/';
 import { Typography } from '@material-ui/core';
+import FooterFile from '../Ads/FooterFile';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -68,6 +69,8 @@ function DownloadsPage(props) {
 					<div className="p-24 sm:m-auto" style={propsStyleContainer}>
 						{/* <CardOverview {...propsContent} /> */}
 						<FolderList code={code} errorList={folderList.error} successList={folderList.success} />
+						{/*  Ads*/}
+						<FooterFile />
 					</div>
 				}
 			/>

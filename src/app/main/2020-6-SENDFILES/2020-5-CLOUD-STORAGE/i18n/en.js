@@ -15,7 +15,9 @@ const locale = {
 	DOWNLOADING: 'Downloading...',
 	CREATED_AT: 'Created at: ',
 	NO_DESCRIPTION: 'No description.',
-	MAX_SIZE: 'Maximum 30 MB upload file size.'
+	MAX_SIZE: 'Maximum 1024 MB upload file size.',
+	SUBTITLE: 'Send large files to friends for free.',
+	HOME_SUBTITLE: 'Send Large Files Online Free Without Registration',
 };
 
 export default locale;

@@ -15,7 +15,9 @@ const locale = {
 	DOWNLOADING: 'Descargando...',
 	CREATED_AT: 'Fecha de cración: ',
 	NO_DESCRIPTION: 'Sin descripción.',
-	MAX_SIZE: 'Tamaño máximo de 30 MB por archivo.'
+	MAX_SIZE: 'Tamaño máximo de 1024 MB por archivo.',
+	SUBTITLE: 'Envía grandes archivos a tus amigos gratis.',
+	HOME_SUBTITLE: 'Envía grandes archivos online sin registrarse.',
 };
 
 export default locale;

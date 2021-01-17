@@ -134,6 +134,7 @@ const Uploader = () => {
 					<FieldForm {...propsEmailFrom} /> */}
 					<Overview {...propsDescription} />
 				</div>
+				<h2>{t('SUBTITLE')}</h2>
 				<Typography display="inline" variant="subtitle1" className={classes.typography}>
 					{t('MAX_SIZE')}
 				</Typography>

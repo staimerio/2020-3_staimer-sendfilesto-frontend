@@ -6,10 +6,14 @@ import FusePageSimple from '@fuse/core/FusePageSimple';
 import { makeStyles } from '@material-ui/core/styles';
 
 import reducer from '../store/reducers';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(theme => ({
 	root: {
 		color: '#FFF'
+	},
+	dark: {
+		color: '#000'
 	},
 	wrapper: {
 		display: 'flex',
@@ -19,7 +23,7 @@ const useStyles = makeStyles(theme => ({
 		maxWidth: '100%',
 		minWidth: 0,
 		height: '100%',
-		backgroundRepeat:'no-repeat',
+		backgroundRepeat: 'no-repeat',
 		backgroundImage:
 			"linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url('/assets/images/backgrounds/sendfiles-fondo-minify.png')"
 	}
@@ -38,6 +42,7 @@ const propsStyleContainer = {
 };
 function HomePage(props) {
 	const classes = useStyles(props);
+	const { t } = useTranslation('homePage');
 
 	return (
 		<FusePageSimple
@@ -54,16 +59,18 @@ function HomePage(props) {
 				<div className="p-24 sm:m-auto" style={propsStyleContainer}>
 					<img
 						src="/assets/images/logos/sendfiles-wallpaper-minify.png"
-						alt="beach"
+						alt="Send Files Online"
+						title="Send Files Online"
 						style={{
 							// maxWidth: '110px',
 							width: '80%',
 							display: 'block',
 							marginLeft: 'auto',
-							marginRight: 'auto',
+							marginRight: 'auto'
 							// marginBottom: '5rem'
 						}}
 					/>
+					<h1 style={{ color: '#000' }}>{t('HOME_SUBTITLE')}</h1>
 					<Uploader />
 				</div>
 			}

@@ -67,10 +67,10 @@ function DownloadsPage(props) {
 				}
 				content={
 					<div className="p-24 sm:m-auto" style={propsStyleContainer}>
-						{/* <CardOverview {...propsContent} /> */}
-						<FolderList code={code} errorList={folderList.error} successList={folderList.success} />
 						{/*  Ads*/}
 						<FooterFile />
+						{/* <CardOverview {...propsContent} /> */}
+						<FolderList code={code} errorList={folderList.error} successList={folderList.success} />
 					</div>
 				}
 			/>

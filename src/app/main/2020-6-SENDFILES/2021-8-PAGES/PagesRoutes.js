@@ -13,8 +13,7 @@ i18next.addResourceBundle('es', 'homePage', es);
 function CloudStorageRoutes(props) {
 	return (
 		<Router>
-			<Route path="/downloads/:code" exact={true} component={React.lazy(() => import('./components/DownloadsPage'))} />
-			<Route path="/" exact={true} component={React.lazy(() => import('./components/HomePage'))} />
+			<Route path="/user/pricing" exact component={React.lazy(() => import('./components/PricingPage'))} />
 		</Router>
 	);
 }

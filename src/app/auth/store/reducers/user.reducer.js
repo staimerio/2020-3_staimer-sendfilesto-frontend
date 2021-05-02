@@ -3,7 +3,7 @@ import * as Actions from '../actions';
 const initialState = {
 	role: [], // guest
 	data: {
-		displayName: 'Guest',
+		displayName: 'Register',
 		photoURL: '/assets/images/avatars/Guest.jpg',
 		email: 'johndoe@withinpixels.com',
 		shortcuts: ['calendar', 'mail', 'contacts', 'todo']

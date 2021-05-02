@@ -1,33 +1,33 @@
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import MenuItem from '@material-ui/core/MenuItem';
-import Popover from '@material-ui/core/Popover';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemText from '@material-ui/core/ListItemText';
+// import MenuItem from '@material-ui/core/MenuItem';
+// import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
-import * as authActions from 'app/auth/store/actions';
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import * as authActions from 'app/auth/store/actions';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function UserMenu(props) {
-	const dispatch = useDispatch();
+	// const dispatch = useDispatch();
 	const user = useSelector(({ auth }) => auth.user);
 
-	const [userMenu, setUserMenu] = useState(null);
+	// const [userMenu, setUserMenu] = useState(null);
 
-	const userMenuClick = event => {
-		setUserMenu(event.currentTarget);
-	};
+	// const userMenuClick = event => {
+	// 	setUserMenu(event.currentTarget);
+	// };
 
-	const userMenuClose = () => {
-		setUserMenu(null);
-	};
+	// const userMenuClose = () => {
+	// 	setUserMenu(null);
+	// };
 
 	return (
 		<>
-			<Button className="h-64" onClick={userMenuClick}>
+			<Button className="h-64" /*onClick={userMenuClick}*/>
 				{user.data.photoURL ? (
 					<Avatar className="" alt="user photo" src={user.data.photoURL} />
 				) : (
@@ -35,7 +35,7 @@ function UserMenu(props) {
 				)}
 
 				<div className="hidden md:flex flex-col mx-12 items-start">
-					<Typography component="span" className="normal-case font-600 flex">
+					<Typography className="normal-case font-600 flex" component={Link} to="/user/pricing">
 						{user.data.displayName}
 					</Typography>
 					<Typography className="text-11 capitalize" color="textSecondary">
@@ -48,7 +48,7 @@ function UserMenu(props) {
 				</Icon>
 			</Button>
 
-			<Popover
+			{/* <Popover
 				open={Boolean(userMenu)}
 				anchorEl={userMenu}
 				onClose={userMenuClose}
@@ -66,12 +66,12 @@ function UserMenu(props) {
 			>
 				{!user.role || user.role.length === 0 ? (
 					<>
-						{/* <MenuItem component={Link} to="/user/login" role="button">
+						<MenuItem component={Link} to="/user/login" role="button">
 							<ListItemIcon className="min-w-40">
 								<Icon>lock</Icon>
 							</ListItemIcon>
 							<ListItemText primary="Login" />
-						</MenuItem> */}
+						</MenuItem>
 						<MenuItem component={Link} to="/user/pricing" role="button">
 							<ListItemIcon className="min-w-40">
 								<Icon>person_add</Icon>
@@ -106,7 +106,7 @@ function UserMenu(props) {
 						</MenuItem>
 					</>
 				)}
-			</Popover>
+			</Popover> */}
 		</>
 	);
 }

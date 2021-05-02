@@ -54,8 +54,7 @@ function FooterFile(props) {
 		scriptPop.async = true;
 		document.body.appendChild(scriptPop);
 		return () => {
-			document.body.removeChild(adstop);
-			document.body.removeChild(scriptPop);
+			// document.body.removeChild(adstop);
 		};
 	}, []);
 

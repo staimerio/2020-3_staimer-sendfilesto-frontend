@@ -31,7 +31,7 @@ function LosPollos(props) {
 		<div>
 			<a href="/tiktok/sendfiles-download" target="_blank">
 				<img
-					src="/assets/images/ads/tiktok.gif"
+					src="https://sendfiles.to/assets/images/ads/tiktok.gif"
 					alt="Tiktok Sendfiles"
 					title="Tiktok Sendfiles"
 					className={classes.images}

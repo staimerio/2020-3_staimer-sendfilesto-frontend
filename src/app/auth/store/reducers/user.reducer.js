@@ -4,7 +4,7 @@ const initialState = {
 	role: [], // guest
 	data: {
 		displayName: 'Guest',
-		photoURL: 'assets/images/avatars/Guest.jpg',
+		photoURL: '/assets/images/avatars/Guest.jpg',
 		email: 'johndoe@withinpixels.com',
 		shortcuts: ['calendar', 'mail', 'contacts', 'todo']
 	}

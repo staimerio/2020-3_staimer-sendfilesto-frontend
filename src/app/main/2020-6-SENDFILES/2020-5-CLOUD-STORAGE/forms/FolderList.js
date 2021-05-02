@@ -44,13 +44,21 @@ const useStyles = makeStyles(theme => {
 		},
 		root: {
 			flexGrow: 1,
-			maxWidth: 752
+			maxWidth: 950
 		},
 		demo: {
 			backgroundColor: theme.palette.background.paper
 		},
 		title: {
 			margin: theme.spacing(4, 0, 2)
+		},
+		overflow: {
+			flexGrow: 1,
+			maxWidth: 950,
+			textOverflow: 'ellipsis',
+			overflow: 'hidden',
+			whiteSpace: 'nowrap',
+			marginRight: '2rem'
 		}
 	};
 });
@@ -145,13 +153,13 @@ const FolderList = props => {
 			) : (
 				clearProgress(progress)
 			)}
-			<List className={classes.root}>
+			<List className={classes.overflow}>
 				{propsFiles.successList.map(file => (
 					<CardSuccessFile {...file} />
 				))}
 			</List>
 			{propsFiles.successList.length && propsFiles.errorList.length ? <Divider /> : null}
-			<List className={classes.root}>
+			<List className={classes.overflow}>
 				{propsFiles.errorList.map(file => (
 					<CardErrorFile {...file} />
 				))}

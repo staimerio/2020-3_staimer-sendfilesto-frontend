@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 	avat_secondary_900: {
 		color: theme.palette.white.main,
 		backgroundColor: theme.palette.secondary[900]
-	}
+	},
 }));
 const CardSuccessFile = item => {
 	const classes = useStyles();

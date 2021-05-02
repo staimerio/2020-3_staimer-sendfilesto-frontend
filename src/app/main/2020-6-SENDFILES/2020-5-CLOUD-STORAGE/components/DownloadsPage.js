@@ -12,6 +12,7 @@ import FolderList from '../forms/FolderList';
 import * as Actions from '../store/actions/';
 import { Typography } from '@material-ui/core';
 import FooterFile from '../Ads/FooterFile';
+import LosPollos from '../Ads/LosPollos';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -28,12 +29,17 @@ const useStyles = makeStyles(theme => ({
 		backgroundRepeat: 'no-repeat',
 		backgroundImage:
 			"linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url('/assets/images/backgrounds/sendfiles-fondo-minify.png')"
+	},
+	row: {
+		display: 'flex',
+		flexWrap: 'wrap',
+		margin: '10px 10px 10px 10px'
 	}
 }));
 
 const propsStyleContainer = {
 	textAlign: 'center',
-	maxWidth: '860px',
+	maxWidth: '1000px',
 	width: '100%'
 };
 function DownloadsPage(props) {
@@ -66,12 +72,17 @@ function DownloadsPage(props) {
 					</div>
 				}
 				content={
-					<div className="p-24 sm:m-auto" style={propsStyleContainer}>
-						{/*  Ads*/}
-						<FooterFile />
-						{/* <CardOverview {...propsContent} /> */}
-						<FolderList code={code} errorList={folderList.error} successList={folderList.success} />
-					</div>
+					<>
+						<div className="p-24 sm:m-auto" style={propsStyleContainer}>
+							{/*  Ads*/}
+							<div id="adstop" className={classes.row}>
+								<LosPollos />
+								<FooterFile />
+							</div>
+							{/* <CardOverview {...propsContent} /> */}
+							<FolderList code={code} errorList={folderList.error} successList={folderList.success} />
+						</div>
+					</>
 				}
 			/>
 		)

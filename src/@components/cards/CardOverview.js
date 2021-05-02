@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => {
 		},
 		root: {
 			flexGrow: 1,
-			maxWidth: 752
+			maxWidth: 950
 		},
 		demo: {
 			backgroundColor: theme.palette.background.paper

@@ -2,6 +2,16 @@ import React, { useEffect } from 'react';
 
 function FooterFile(props) {
 	useEffect(() => {
+		//ad-maven
+		const script = document.createElement('script');
+		script.src = 'https://d1a3jb5hjny5s4.cloudfront.net/?hbjad=928268';
+		script['data-cfasync'] = false;
+		document.body.appendChild(script);
+		//adsterra social
+		const script2 = document.createElement('script');
+		script2.src = 'https://pl16294643.achievablecpmrevenue.com/0d/de/f5/0ddef519618bdc5dc2bbd34d3bbfc496.js';
+		script2.type = 'text/javascript';
+		document.body.appendChild(script2);
 		// Adskeeper
 		// const script = document.createElement('script');
 		// script.src = 'https://jsc.adskeeper.com/s/e/sendfiles.to.1070066.js';
@@ -20,7 +30,7 @@ function FooterFile(props) {
 		// initscript.src = `https://a.exdynsrv.com/ads.js`;
 		// adstop.appendChild(initscript);
 
-		// //Banner 1
+		//Banner 1
 		// const script = document.createElement('script');
 		// script.type = 'application/javascript';
 		// script.innerHTML = `var ad_idzone = "4266412",ad_width = "300",ad_height = "250";`;
@@ -36,7 +46,7 @@ function FooterFile(props) {
 		// iframe.setAttribute('style', 'margin: 10px auto 0px auto;');
 		// adstop.appendChild(iframe);
 
-		// //Banner 2
+		//Banner 2
 		// const script2 = document.createElement('script');
 		// script2.type = 'application/javascript';
 		// script2.innerHTML = `var ad_idzone = "4266412",ad_width = "300",ad_height = "250";`;
@@ -52,23 +62,19 @@ function FooterFile(props) {
 		// iframe2.setAttribute('style', 'margin: 10px auto 0px auto;');
 		// adstop.appendChild(iframe2);
 		// Adcash
-		const scriptPop = document.createElement('script');
-		scriptPop.src = 'https://asacdn.com/script/atg.js';
-		scriptPop.setAttribute('data-adel', 'atag');
-		scriptPop.setAttribute('czid', 'r4u6f25l');
-		scriptPop.async = true;
-		document.body.appendChild(scriptPop);
+		// const scriptPop = document.createElement('script');
+		// scriptPop.src = 'https://asacdn.com/script/atg.js';
+		// scriptPop.setAttribute('data-adel', 'atag');
+		// scriptPop.setAttribute('czid', 'r4u6f25l');
+		// scriptPop.async = true;
+		// document.body.appendChild(scriptPop);
 		return () => {
 			// document.body.removeChild(adstop);
 		};
 	}, []);
 
 	// return <div style={{ marginTop: '1rem' }}></div>;
-	return (
-		<div style={{ marginTop: '1rem' }}>
-			{/* <div id="M677978ScriptRootC1070066"></div> */}
-		</div>
-	);
+	return <div style={{ marginTop: '1rem' }}>{/* <div id="M677978ScriptRootC1070066"></div> */}</div>;
 }
 
 export default FooterFile;

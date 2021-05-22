@@ -12,7 +12,7 @@ import FolderList from '../forms/FolderList';
 import * as Actions from '../store/actions/';
 import { Typography } from '@material-ui/core';
 import FooterFile from '../Ads/FooterFile';
-import LosPollos from '../Ads/LosPollos';
+// import LosPollos from '../Ads/LosPollos';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -76,7 +76,7 @@ function DownloadsPage(props) {
 						<div className="p-24 sm:m-auto" style={propsStyleContainer}>
 							{/*  Ads*/}
 							<div id="adstop" className={classes.row}>
-								<LosPollos />
+								{/* <LosPollos /> */}
 								<FooterFile />
 							</div>
 							{/* <CardOverview {...propsContent} /> */}

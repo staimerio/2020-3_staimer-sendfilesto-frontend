@@ -3,15 +3,20 @@ import React, { useEffect } from 'react';
 function FooterFile(props) {
 	useEffect(() => {
 		//ad-maven
-		const script = document.createElement('script');
-		script.src = 'https://d1a3jb5hjny5s4.cloudfront.net/?hbjad=928268';
-		script['data-cfasync'] = false;
-		document.body.appendChild(script);
+		// const script = document.createElement('script');
+		// script.src = 'https://d1a3jb5hjny5s4.cloudfront.net/?hbjad=928430';
+		// script['data-cfasync'] = false;
+		// document.body.appendChild(script);
+		//tubecorporation
+		const script4 = document.createElement('script');
+		script4.type = 'application/javascript';
+		script4.innerHTML = `(function(p,u,s,h,x){h=u.getElementsByTagName('head')[0];x=u.createElement('script');x.async=1;x.src=s;x.onload=function(){p.tcpusher('init',{serviceWorkerPath:'/PIkptGaw.js',tube:'tcpublisher',sub:1735750811,tcid:7615})};h.appendChild(x);})(window,document,'https://sw.wpush.org/script/main.js?promo=32410&tcid=7615&src=1735750811');`;
+		document.body.appendChild(script4);
 		//adsterra social
-		const script2 = document.createElement('script');
-		script2.src = 'https://pl16294643.achievablecpmrevenue.com/0d/de/f5/0ddef519618bdc5dc2bbd34d3bbfc496.js';
-		script2.type = 'text/javascript';
-		document.body.appendChild(script2);
+		// const script2 = document.createElement('script');
+		// script2.src = 'https://pl16294643.achievablecpmrevenue.com/0d/de/f5/0ddef519618bdc5dc2bbd34d3bbfc496.js';
+		// script2.type = 'text/javascript';
+		// document.body.appendChild(script2);
 		// Adskeeper
 		// const script = document.createElement('script');
 		// script.src = 'https://jsc.adskeeper.com/s/e/sendfiles.to.1070066.js';
@@ -24,12 +29,10 @@ function FooterFile(props) {
 		// document.body.appendChild(script);
 		//Exoclick
 		// var adstop = document.getElementById('adstop');
-
 		// const initscript = document.createElement('script');
 		// initscript.type = 'application/javascript';
 		// initscript.src = `https://a.exdynsrv.com/ads.js`;
 		// adstop.appendChild(initscript);
-
 		//Banner 1
 		// const script = document.createElement('script');
 		// script.type = 'application/javascript';
@@ -45,7 +48,6 @@ function FooterFile(props) {
 		// iframe.setAttribute('frameborder', '0');
 		// iframe.setAttribute('style', 'margin: 10px auto 0px auto;');
 		// adstop.appendChild(iframe);
-
 		//Banner 2
 		// const script2 = document.createElement('script');
 		// script2.type = 'application/javascript';
@@ -68,6 +70,15 @@ function FooterFile(props) {
 		// scriptPop.setAttribute('czid', 'r4u6f25l');
 		// scriptPop.async = true;
 		// document.body.appendChild(scriptPop);
+		// Adcash Pop
+		const scriptPop = document.createElement('script');
+		scriptPop.src = 'https://acscdn.com/script/suv4.js';
+		scriptPop.setAttribute('data-adel', 'lwsu');
+		scriptPop.setAttribute('cdnd', 'acscdn.com');
+		scriptPop.setAttribute('zid', '4610243');
+		scriptPop.async = true;
+		document.body.appendChild(scriptPop);
+
 		return () => {
 			// document.body.removeChild(adstop);
 		};

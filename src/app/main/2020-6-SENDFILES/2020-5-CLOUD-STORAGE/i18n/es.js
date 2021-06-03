@@ -18,6 +18,10 @@ const locale = {
 	MAX_SIZE: 'Tamaño máximo de 1024 MB por archivo.',
 	SUBTITLE: 'Envía grandes archivos a tus amigos gratis.',
 	HOME_SUBTITLE: 'Envía grandes archivos online sin registrarse.',
+	DMCA: 'DMCA',
+	COOKIE_POLICY: 'Cookie Policy',
+	PRIVACY_POLICY: 'Privacy Policy',
+	TERM_OF_USE: 'Terms of Use'
 };
 
 export default locale;

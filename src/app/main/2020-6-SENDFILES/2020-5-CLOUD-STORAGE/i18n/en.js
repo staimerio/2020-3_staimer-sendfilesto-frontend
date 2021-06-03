@@ -18,6 +18,10 @@ const locale = {
 	MAX_SIZE: 'Maximum 1024 MB upload file size.',
 	SUBTITLE: 'Send large files to friends for free.',
 	HOME_SUBTITLE: 'Send Large Files Online Free Without Registration',
+	DMCA: 'DMCA',
+	COOKIE_POLICY: 'Cookie Policy',
+	PRIVACY_POLICY: 'Privacy Policy',
+	TERM_OF_USE: 'Terms of Use'
 };
 
 export default locale;

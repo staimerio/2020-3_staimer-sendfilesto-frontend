@@ -6,7 +6,7 @@ import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import NavbarMobileToggleButton from 'app/fuse-layouts/shared-components/NavbarMobileToggleButton';
 // import QuickPanelToggleButton from 'app/fuse-layouts/shared-components/quickPanel/QuickPanelToggleButton';
-import UserMenu from 'app/fuse-layouts/shared-components/UserMenu';
+// import UserMenu from 'app/fuse-layouts/shared-components/UserMenu';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import LanguageSwitcher from '../../shared-components/LanguageSwitcher';
@@ -50,7 +50,7 @@ function ToolbarLayout1(props) {
 					<NavbarLayout />
 
 					<div className="flex">
-						<UserMenu />
+						{/* <UserMenu /> */}
 						{/* 
 						<div className={classes.separator} />
 						<FuseSearch />

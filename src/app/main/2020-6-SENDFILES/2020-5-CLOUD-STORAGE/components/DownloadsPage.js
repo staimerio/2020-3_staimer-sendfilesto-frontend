@@ -12,6 +12,7 @@ import FolderList from '../forms/FolderList';
 import * as Actions from '../store/actions/';
 import { Typography } from '@material-ui/core';
 import FooterFile from '../Ads/FooterFile';
+import RegisterAds from '../Ads/RegisterAds';
 // import LosPollos from '../Ads/LosPollos';
 
 const useStyles = makeStyles(theme => ({
@@ -81,6 +82,7 @@ function DownloadsPage(props) {
 							</div>
 							{/* <CardOverview {...propsContent} /> */}
 							<FolderList code={code} errorList={folderList.error} successList={folderList.success} />
+							<RegisterAds />
 						</div>
 					</>
 				}

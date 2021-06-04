@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Paper, Divider, Link, Typography, LinearProgress } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
@@ -64,8 +64,6 @@ const useStyles = makeStyles(theme => {
 });
 
 const FolderList = props => {
-	const { errorList, successList } = props;
-
 	const { t } = useTranslation('homePage');
 	const classes = useStyles();
 	const dispatch = useDispatch();
@@ -74,6 +72,8 @@ const FolderList = props => {
 	const [checking, setChecking] = React.useState(false);
 	const [timer, setTimer] = React.useState(false);
 
+
+	const folderList = useSelector(({ storage }) => storage.uploader.folder);
 	const getDownloadAction = item => {
 		return [
 			{
@@ -100,7 +100,7 @@ const FolderList = props => {
 			const item = {
 				key: `success-${file.code}`,
 				title: file.filename,
-				subtitle: `${createdAt} ${getSizeFromBytes(file.size)} | ${file.mimetype}`,
+				subtitle: `${createdAt} ${getSizeFromBytes(file.size)}`,
 				avatar: getAvatarFromStr(file.extension),
 				actions: getDownloadAction(file)
 			};
@@ -122,8 +122,8 @@ const FolderList = props => {
 	};
 
 	const propsFiles = {
-		successList: getSuccessFiles(successList),
-		errorList: getErrorFiles(errorList)
+		successList: getSuccessFiles(folderList.success),
+		errorList: getErrorFiles(folderList.error)
 	};
 	const propsTimer = {
 		secs: 5,

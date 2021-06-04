@@ -21,7 +21,8 @@ const locale = {
 	DMCA: 'DMCA',
 	COOKIE_POLICY: 'Cookie Policy',
 	PRIVACY_POLICY: 'Privacy Policy',
-	TERM_OF_USE: 'Terms of Use'
+	TERM_OF_USE: 'Terms of Use',
+	LATEST_FILES: 'Latest downloads',
 };
 
 export default locale;

@@ -25,6 +25,12 @@ export const GET_FOLDER_ERROR = '[UPLOADER] GET_FOLDER_ERROR';
 export const FIND_FILE = '[DOWNLOAD] FIND_FILE';
 export const DOWNLOADED_FILE = '[DOWNLOAD] DOWNLOAD_FILE';
 export const DOWNLOADED_FILE_ERROR = '[DOWNLOAD] DOWNLOAD_FILE_ERROR';
+
+export const GET_LATEST_FILES = '[FILES] GET_LATEST_FILES';
+export const SET_LATEST_FILES = '[FILES] SET_LATEST_FILES';
+export const GET_LATEST_FILES_ERROR = '[FILES] GET_LATEST_FILES_ERROR';
+
+export const CLEAR_FOLDER = '[FOLDER] CLEAR_FOLDER';
 /***************************************************************
  * Actions
  ***************************************************************/
@@ -154,5 +160,40 @@ export function downloadFile(file, setProgress, setChecking, setTimer) {
 			});
 			showSnackbarMessage(error.data ? error.data.msg : error.message, 'error', dispatch);
 		}
+	};
+}
+
+/**
+ * Get latest files
+ * @param {string} folder
+ */
+export function getLatestFiles() {
+	/*Convert from object to form */
+	let result = null;
+	return async dispatch => {
+		dispatch({
+			type: GET_LATEST_FILES
+		});
+		try {
+			result = await http.reqGet(urlStorageFiles);
+
+			if (!result.valid) throw Error(result.msg);
+			dispatch({
+				type: SET_LATEST_FILES,
+				payload: result.data
+			});
+		} catch (error) {
+			console.log('error: ', error);
+			dispatch({
+				type: GET_LATEST_FILES_ERROR
+			});
+			showSnackbarMessage(error && error.data ? error.data.msg : error?.message || 'Error :(', 'error', dispatch);
+		}
+	};
+}
+
+export function clearFolder() {
+	return {
+		type: CLEAR_FOLDER
 	};
 }

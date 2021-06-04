@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import reducer from '../store/reducers';
 import { useTranslation } from 'react-i18next';
+import LatestList from '../forms/LatestList';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -56,23 +57,26 @@ function HomePage(props) {
 			// 	</div>
 			// }
 			content={
-				<div className="p-24 sm:m-auto" style={propsStyleContainer}>
-					<img
-						src="/assets/images/logos/sendfiles-wallpaper-minify.png"
-						alt="Send Files Online"
-						title="Send Files Online"
-						style={{
-							// maxWidth: '110px',
-							width: '80%',
-							display: 'block',
-							marginLeft: 'auto',
-							marginRight: 'auto'
-							// marginBottom: '5rem'
-						}}
-					/>
-					<h1 style={{ color: '#000' }}>{t('HOME_SUBTITLE')}</h1>
-					<Uploader />
-				</div>
+				<>
+					<div className="p-24 sm:m-auto" style={propsStyleContainer}>
+						<img
+							src="/assets/images/logos/sendfiles-wallpaper-minify.png"
+							alt="Send Files Online"
+							title="Send Files Online"
+							style={{
+								// maxWidth: '110px',
+								width: '80%',
+								display: 'block',
+								marginLeft: 'auto',
+								marginRight: 'auto'
+								// marginBottom: '5rem'
+							}}
+						/>
+						<h1 style={{ color: '#000' }}>{t('HOME_SUBTITLE')}</h1>
+						<Uploader />
+						<LatestList />
+					</div>
+				</>
 			}
 		/>
 	);

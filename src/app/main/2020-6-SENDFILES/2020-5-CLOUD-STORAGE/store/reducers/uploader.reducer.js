@@ -4,7 +4,8 @@ import * as models from '../../models';
 const initialState = {
 	loading: false,
 	uploader: new models.uploaderInterface(),
-	folder: new models.folderInterface()
+	folder: new models.folderInterface(),
+	filesList: []
 };
 
 const uploaderReducer = function (state = initialState, action) {
@@ -48,6 +49,23 @@ const uploaderReducer = function (state = initialState, action) {
 				folder: new models.folderInterface({
 					...action.payload
 				})
+			};
+		}
+		case Actions.SET_LATEST_FILES: {
+			const { files } = action.payload;
+			const filesUniqueFolder = files.reduce((acc, file) => {
+				if (!acc.find(item => item.folder === file.folder)) acc.push(file);
+				return acc;
+			}, []);
+			return {
+				...state,
+				loading: false,
+				filesList: filesUniqueFolder.map(file => new models.filesInterface(file))
+			};
+		}
+		case Actions.CLEAR_FOLDER: {
+			return {
+				...initialState
 			};
 		}
 		// case Actions.CLEAR_UPLOADER: {

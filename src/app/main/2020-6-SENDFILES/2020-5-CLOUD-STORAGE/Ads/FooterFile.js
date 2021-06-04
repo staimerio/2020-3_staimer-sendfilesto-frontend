@@ -64,20 +64,20 @@ function FooterFile(props) {
 		// iframe2.setAttribute('style', 'margin: 10px auto 0px auto;');
 		// adstop.appendChild(iframe2);
 		// Adcash
+		const scriptAtag = document.createElement('script');
+		scriptAtag.src = 'https://asacdn.com/script/atg.js';
+		scriptAtag.setAttribute('data-adel', 'atag');
+		scriptAtag.setAttribute('czid', 'r4u6f25l');
+		scriptAtag.async = true;
+		document.body.appendChild(scriptAtag);
+		// Adcash Pop
 		// const scriptPop = document.createElement('script');
-		// scriptPop.src = 'https://asacdn.com/script/atg.js';
-		// scriptPop.setAttribute('data-adel', 'atag');
-		// scriptPop.setAttribute('czid', 'r4u6f25l');
+		// scriptPop.src = 'https://acscdn.com/script/suv4.js';
+		// scriptPop.setAttribute('data-adel', 'lwsu');
+		// scriptPop.setAttribute('cdnd', 'acscdn.com');
+		// scriptPop.setAttribute('zid', '4610243');
 		// scriptPop.async = true;
 		// document.body.appendChild(scriptPop);
-		// Adcash Pop
-		const scriptPop = document.createElement('script');
-		scriptPop.src = 'https://acscdn.com/script/suv4.js';
-		scriptPop.setAttribute('data-adel', 'lwsu');
-		scriptPop.setAttribute('cdnd', 'acscdn.com');
-		scriptPop.setAttribute('zid', '4610243');
-		scriptPop.async = true;
-		document.body.appendChild(scriptPop);
 
 		return () => {
 			// document.body.removeChild(adstop);

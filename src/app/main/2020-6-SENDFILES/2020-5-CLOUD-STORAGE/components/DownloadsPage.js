@@ -13,6 +13,8 @@ import * as Actions from '../store/actions/';
 import { Typography } from '@material-ui/core';
 import FooterFile from '../Ads/FooterFile';
 import RegisterAds from '../Ads/RegisterAds';
+import LatestList from '../forms/LatestList';
+import SkeletonForm from '@fuse/components/skeleton/SkeletonForm';
 // import LosPollos from '../Ads/LosPollos';
 
 const useStyles = makeStyles(theme => ({
@@ -44,50 +46,58 @@ const propsStyleContainer = {
 	width: '100%'
 };
 function DownloadsPage(props) {
-	const params = useParams();
 	const classes = useStyles(props);
-	const dispatch = useDispatch();
 	const { t } = useTranslation('homePage');
+	const params = useParams();
+	const dispatch = useDispatch();
 
 	const { code } = params;
-	const { folder: folderList } = useSelector(({ storage }) => storage.uploader);
-
+	// const propsContent = {
+	// 	description: folderList.description
+	// };
+	const folderList = useSelector(({ storage }) => storage.uploader.folder);
+	const loading = useSelector(({ storage }) => storage.uploader.loading);
 	useEffect(() => {
 		if (!folderList.code) dispatch(Actions.getFolder(code));
 	}, [dispatch, folderList.code, code]);
 
-	// const propsContent = {
-	// 	description: folderList.description
-	// };
+	useEffect(() => {
+		return () => dispatch(Actions.clearFolder());
+	}, [dispatch]);
 
 	return (
-		folderList.code && (
-			<FusePageSimple
-				classes={{
-					root: classes.root,
-					wrapper: classes.wrapper
-				}}
-				header={
-					<div className="p-24">
-						<Typography variant="body2">{folderList.description || t('NO_DESCRIPTION')}</Typography>
-					</div>
-				}
-				content={
-					<>
-						<div className="p-24 sm:m-auto" style={propsStyleContainer}>
-							{/*  Ads*/}
-							<div id="adstop" className={classes.row}>
-								{/* <LosPollos /> */}
-								<FooterFile />
-							</div>
-							{/* <CardOverview {...propsContent} /> */}
-							<FolderList code={code} errorList={folderList.error} successList={folderList.success} />
-							<RegisterAds />
+		<FusePageSimple
+			classes={{
+				root: classes.root,
+				wrapper: classes.wrapper
+			}}
+			header={
+				<div className="p-24">
+					<Typography variant="body2">{folderList.description || t('NO_DESCRIPTION')}</Typography>
+				</div>
+			}
+			content={
+				<>
+					<div className="p-24 sm:m-auto" style={propsStyleContainer}>
+						{/*  Ads*/}
+						<div id="adstop" className={classes.row}>
+							{/* <LosPollos /> */}
+							<FooterFile />
 						</div>
-					</>
-				}
-			/>
-		)
+						{/* <CardOverview {...propsContent} /> */}
+						{loading ? (
+							<SkeletonForm />
+						) : (
+							<>
+								<FolderList />
+								<RegisterAds />
+								<LatestList />
+							</>
+						)}
+					</div>
+				</>
+			}
+		/>
 	);
 }
 

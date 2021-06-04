@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
 function RegisterAds(props) {
 	const classes = useStyles(props);
 	return (
-		<a href="https://see.tfaln.com/offer?prod=1&ref=5299668" target="_blank" rel="noopener noreferrer">
+		<a href="https://look.flowln.com/offer?prod=946&ref=5297906" target="_blank" rel="noopener noreferrer">
 			<img
 				src="/assets/images/register.png"
 				alt="Sign up for fast downloads"

@@ -74,8 +74,8 @@ const LatestList = props => {
 	const filesList = useSelector(({ storage }) => storage.uploader.filesList);
 
 	useEffect(() => {
-		dispatch(Actions.getLatestFiles());
-	}, [dispatch]);
+		!filesList.length && dispatch(Actions.getLatestFiles());
+	}, [dispatch, filesList.length]);
 
 	const showFolderAction = item => {
 		return [

@@ -3,6 +3,7 @@ import * as models from '../../models';
 
 const initialState = {
 	loading: false,
+	loadingFiles: false,
 	uploader: new models.uploaderInterface(),
 	folder: new models.folderInterface(),
 	filesList: []
@@ -20,7 +21,18 @@ const uploaderReducer = function (state = initialState, action) {
 		// 		}
 		// 	};
 		// }
-		case Actions.FIND_FILE:
+		case Actions.GET_LATEST_FILES: {
+			return {
+				...state,
+				loadingFiles: true
+			};
+		}
+		case Actions.GET_LATEST_FILES_ERROR: {
+			return {
+				...state,
+				loadingFiles: false
+			};
+		}
 		case Actions.FIND_FOLDER:
 		case Actions.SAVE_UPLOADER: {
 			return {
@@ -59,7 +71,7 @@ const uploaderReducer = function (state = initialState, action) {
 			}, []);
 			return {
 				...state,
-				loading: false,
+				loadingFiles: false,
 				filesList: filesUniqueFolder.map(file => new models.filesInterface(file))
 			};
 		}

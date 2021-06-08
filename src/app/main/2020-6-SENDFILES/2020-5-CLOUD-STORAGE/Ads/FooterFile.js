@@ -8,10 +8,15 @@ function FooterFile(props) {
 		// script['data-cfasync'] = false;
 		// document.body.appendChild(script);
 		//tubecorporation
-		const script4 = document.createElement('script');
-		script4.type = 'application/javascript';
-		script4.innerHTML = `(function(p,u,s,h,x){h=u.getElementsByTagName('head')[0];x=u.createElement('script');x.async=1;x.src=s;x.onload=function(){p.tcpusher('init',{serviceWorkerPath:'/PIkptGaw.js',tube:'tcpublisher',sub:1735750811,tcid:7615})};h.appendChild(x);})(window,document,'https://sw.wpush.org/script/main.js?promo=32410&tcid=7615&src=1735750811');`;
-		document.body.appendChild(script4);
+		// const script4 = document.createElement('script');
+		// script4.type = 'application/javascript';
+		// script4.innerHTML = `(function(p,u,s,h,x){h=u.getElementsByTagName('head')[0];x=u.createElement('script');x.async=1;x.src=s;x.onload=function(){p.tcpusher('init',{serviceWorkerPath:'/PIkptGaw.js',tube:'tcpublisher',sub:1735750811,tcid:7615})};h.appendChild(x);})(window,document,'https://sw.wpush.org/script/main.js?promo=32410&tcid=7615&src=1735750811');`;
+		// document.body.appendChild(script4);
+		//propellerads
+		const script5 = document.createElement('script');
+		script5.type = 'application/javascript';
+		script5.innerHTML = `(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://iclickcdn.com/tag.min.js',4296038,document.body||document.documentElement)`;
+		document.body.appendChild(script5);
 		//adsterra social
 		// const script2 = document.createElement('script');
 		// script2.src = 'https://pl16294643.achievablecpmrevenue.com/0d/de/f5/0ddef519618bdc5dc2bbd34d3bbfc496.js';
@@ -64,12 +69,12 @@ function FooterFile(props) {
 		// iframe2.setAttribute('style', 'margin: 10px auto 0px auto;');
 		// adstop.appendChild(iframe2);
 		// Adcash
-		const scriptAtag = document.createElement('script');
-		scriptAtag.src = 'https://asacdn.com/script/atg.js';
-		scriptAtag.setAttribute('data-adel', 'atag');
-		scriptAtag.setAttribute('czid', 'r4u6f25l');
-		scriptAtag.async = true;
-		document.body.appendChild(scriptAtag);
+		// const scriptAtag = document.createElement('script');
+		// scriptAtag.src = 'https://asacdn.com/script/atg.js';
+		// scriptAtag.setAttribute('data-adel', 'atag');
+		// scriptAtag.setAttribute('czid', 'r4u6f25l');
+		// scriptAtag.async = true;
+		// document.body.appendChild(scriptAtag);
 		// Adcash Pop
 		// const scriptPop = document.createElement('script');
 		// scriptPop.src = 'https://acscdn.com/script/suv4.js';

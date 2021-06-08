@@ -56,7 +56,7 @@ function DownloadsPage(props) {
 	// 	description: folderList.description
 	// };
 	const folderList = useSelector(({ storage }) => storage.uploader.folder);
-	const loading = useSelector(({ storage }) => storage.uploader.loading);
+	const loadingFiles = useSelector(({ storage }) => storage.uploader.loadingFiles);
 	useEffect(() => {
 		if (!folderList.code) dispatch(Actions.getFolder(code));
 	}, [dispatch, folderList.code, code]);
@@ -85,7 +85,7 @@ function DownloadsPage(props) {
 							<FooterFile />
 						</div>
 						{/* <CardOverview {...propsContent} /> */}
-						{loading ? (
+						{loadingFiles ? (
 							<SkeletonForm />
 						) : (
 							<>

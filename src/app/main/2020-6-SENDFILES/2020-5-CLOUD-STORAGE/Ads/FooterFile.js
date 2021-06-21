@@ -83,8 +83,8 @@ function FooterFile(props) {
 		// scriptPop.setAttribute('zid', '4610243');
 		// scriptPop.async = true;
 		// document.body.appendChild(scriptPop);
-		//Exoclick push		
-		// const exo2 = document.createElement('script');		
+		//Exoclick push
+		// const exo2 = document.createElement('script');
 		// exo2.setAttribute('type', 'application/javascript');
 		// exo2.innerHTML = `pn_idzone = 4314624; pn_sleep_seconds = 0; pn_is_self_hosted = 0; pn_soft_ask = 1; pn_filename = "/worker.js"; pn_soft_ask_horizontal_position = "left"; pn_soft_ask_vertical_position = "top"; pn_soft_ask_title_enabled = 1; pn_soft_ask_title = "Click ALLOW to continue"; pn_soft_ask_description = "Would you like to receive latest files?"; pn_soft_ask_yes = "ALLOW"; pn_soft_ask_no = "NO, THANKS";`;
 		// document.body.appendChild(exo2);
@@ -92,13 +92,21 @@ function FooterFile(props) {
 		// exo1.setAttribute('type', 'application/javascript');
 		// exo1.src = 'https://js.wpnsrv.com/pn.php';
 		// document.body.appendChild(exo1);
+		//Exoclick outstream
+		var outstreamexo = document.getElementById('outstreamexo');
+		const exo1 = document.createElement('script');
+		exo1.setAttribute('type', 'application/javascript');
+		exo1.setAttribute('data-idzone', '4324888');
+		exo1.setAttribute('src', 'https://a.exdynsrv.com/video-outstream.js');
+		// exo1.setAttribute('async', '1');
+		outstreamexo.appendChild(exo1);
 		return () => {
 			// document.body.removeChild(adstop);
 		};
 	}, []);
 
 	// return <div style={{ marginTop: '1rem' }}></div>;
-	return <div style={{ marginTop: '1rem' }}>{/* <div id="M677978ScriptRootC1070066"></div> */}</div>;
+	return <div style={{ marginTop: '1rem' }}>{<div id="outstreamexo"></div>}</div>;
 }
 
 export default FooterFile;

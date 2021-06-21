@@ -12,7 +12,7 @@ import FolderList from '../forms/FolderList';
 import * as Actions from '../store/actions/';
 import { Typography } from '@material-ui/core';
 import FooterFile from '../Ads/FooterFile';
-import RegisterAds from '../Ads/RegisterAds';
+// import RegisterAds from '../Ads/RegisterAds';
 import LatestList from '../forms/LatestList';
 import SkeletonForm from '@fuse/components/skeleton/SkeletonForm';
 // import LosPollos from '../Ads/LosPollos';
@@ -90,7 +90,7 @@ function DownloadsPage(props) {
 						) : (
 							<>
 								<FolderList />
-								<RegisterAds />
+								{/* <RegisterAds /> */}
 								<LatestList />
 							</>
 						)}

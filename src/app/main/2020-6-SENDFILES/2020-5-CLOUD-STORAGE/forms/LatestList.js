@@ -10,7 +10,7 @@ import List from '@material-ui/core/List';
 import * as Actions from '../store/actions';
 import { getSizeFromBytes, getAvatarFromStr } from 'app/utils';
 import CardSuccessFile from '@components/cardList/CardSuccessFile';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 
 const useStyles = makeStyles(theme => {
 	// console.log(theme.palette)
@@ -70,8 +70,10 @@ const LatestList = props => {
 	const classes = useStyles();
 	const dispatch = useDispatch();
 	const history = useHistory();
+	const location = useLocation();
 
 	const filesList = useSelector(({ storage }) => storage.uploader.filesList);
+	const noads = Boolean(new URLSearchParams(location.search).get('ads'));
 
 	useEffect(() => {
 		!filesList.length && dispatch(Actions.getLatestFiles());
@@ -92,8 +94,8 @@ const LatestList = props => {
 		];
 	};
 
-	const showFolder = file => {
-		history.push(`/downloads/${file.code}`);
+	const showFolder = file => {		
+		history.push(`/downloads/${file.code}${noads?"?ads=1":""}`);
 	};
 
 	const getSuccessFiles = files => {

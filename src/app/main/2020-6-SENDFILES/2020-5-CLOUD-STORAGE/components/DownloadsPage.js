@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
@@ -50,8 +50,11 @@ function DownloadsPage(props) {
 	const { t } = useTranslation('homePage');
 	const params = useParams();
 	const dispatch = useDispatch();
+	const location = useLocation();
 
 	const { code } = params;
+
+	const noads = Boolean(new URLSearchParams(location.search).get('ads'));
 	// const propsContent = {
 	// 	description: folderList.description
 	// };
@@ -80,10 +83,12 @@ function DownloadsPage(props) {
 				<>
 					<div className="p-24 sm:m-auto" style={propsStyleContainer}>
 						{/*  Ads*/}
-						<div id="adstop" className={classes.row}>
-							{/* <LosPollos /> */}
-							<FooterFile />
-						</div>
+						{!noads && (
+							<div id="adstop" className={classes.row}>
+								{/* <LosPollos /> */}
+								<FooterFile />
+							</div>
+						)}
 						{/* <CardOverview {...propsContent} /> */}
 						{loadingFiles ? (
 							<SkeletonForm />

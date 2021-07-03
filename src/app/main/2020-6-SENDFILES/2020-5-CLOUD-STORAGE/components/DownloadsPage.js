@@ -81,6 +81,7 @@ function DownloadsPage(props) {
 			}
 			content={
 				<>
+					<div id="outstreamexo"></div>
 					<div className="p-24 sm:m-auto" style={propsStyleContainer}>
 						{/*  Ads*/}
 						{!noads && (

@@ -69,20 +69,20 @@ function FooterFile(props) {
 		// iframe2.setAttribute('style', 'margin: 10px auto 0px auto;');
 		// adstop.appendChild(iframe2);
 		// Adcash tag
-		// const scriptAtag = document.createElement('script');
-		// scriptAtag.src = 'https://asacdn.com/script/atg.js';
-		// scriptAtag.setAttribute('data-adel', 'atag');
-		// scriptAtag.setAttribute('czid', 'r4u6f25l');
-		// scriptAtag.async = true;
-		// document.body.appendChild(scriptAtag);
+		const scriptAtag = document.createElement('script');
+		scriptAtag.src = 'https://asacdn.com/script/atg.js';
+		scriptAtag.setAttribute('data-adel', 'atag');
+		scriptAtag.setAttribute('czid', 'r4u6f25l');
+		scriptAtag.async = true;
+		document.body.appendChild(scriptAtag);
 		// Adcash Pop
-		const scriptPop = document.createElement('script');
-		scriptPop.src = 'https://acscdn.com/script/suv4.js';
-		scriptPop.setAttribute('data-adel', 'lwsu');
-		scriptPop.setAttribute('cdnd', 'acscdn.com');
-		scriptPop.setAttribute('zid', '4610243');
-		scriptPop.async = true;
-		document.body.appendChild(scriptPop);
+		// const scriptPop = document.createElement('script');
+		// scriptPop.src = 'https://acscdn.com/script/suv4.js';
+		// scriptPop.setAttribute('data-adel', 'lwsu');
+		// scriptPop.setAttribute('cdnd', 'acscdn.com');
+		// scriptPop.setAttribute('zid', '4610243');
+		// scriptPop.async = true;
+		// document.body.appendChild(scriptPop);
 		//Exoclick push
 		// const exo2 = document.createElement('script');
 		// exo2.setAttribute('type', 'application/javascript');
@@ -93,6 +93,7 @@ function FooterFile(props) {
 		// exo1.src = 'https://js.wpnsrv.com/pn.php';
 		// document.body.appendChild(exo1);
 		//Exoclick outstream
+		/*
 		var outstreamexo = document.getElementById('outstreamexo');
 		const exo1 = document.createElement('script');
 		exo1.setAttribute('type', 'application/javascript');
@@ -100,6 +101,7 @@ function FooterFile(props) {
 		exo1.setAttribute('src', 'https://a.exdynsrv.com/video-outstream.js');
 		// exo1.setAttribute('async', '1');
 		outstreamexo.appendChild(exo1);
+		*/
 		return () => {
 			// document.body.removeChild(adstop);
 		};
